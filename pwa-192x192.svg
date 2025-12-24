@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e0e0e0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景圆角矩形 -->
+  <rect width="192" height="192" rx="32" fill="url(#bg)"/>
+  
+  <!-- 麻将牌 -->
+  <g transform="translate(36, 36)">
+    <!-- 牌的背景 -->
+    <rect x="0" y="0" width="120" height="120" rx="12" fill="url(#tile)" stroke="#ccc" stroke-width="2"/>
+    
+    <!-- 万字符号 -->
+    <text x="60" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#e53935" text-anchor="middle">
+      一
+    </text>
+    <text x="60" y="110" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#e53935" text-anchor="middle">
+      萬
+    </text>
+  </g>
+</svg>
+
