@@ -19,11 +19,76 @@
     <link rel="icon" type="image/svg+xml" href="./pwa-192x192.svg" />
     
     <title>麻将分析器</title>
-    <script type="module" crossorigin src="./index.BXZ9s8x4.js"></script>
-    <link rel="modulepreload" crossorigin href="./vendor.C2p1521c.js">
-    <link rel="stylesheet" crossorigin href="./style.B0k5lUs9.css">
+    
+    <!-- 防止白色闪烁：内联关键样式 -->
+    <style>
+      /* 默认深色背景（与暗色主题一致） */
+      :root {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #0f172a !important;
+      }
+      /* #app 背景 */
+      #app {
+        background-color: inherit;
+      }
+      /* 加载占位 */
+      #app:empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      }
+      #app:empty::after {
+        content: '🀄';
+        font-size: 48px;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.1); }
+      }
+      /* 如果用户偏好浅色模式，使用浅色背景 */
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg-primary: #ffffff;
+          --bg-secondary: #f8f9fa;
+        }
+        html, body {
+          background-color: #ffffff !important;
+        }
+        #app:empty {
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./index.D0mN0E-X.js"></script>
+    <link rel="modulepreload" crossorigin href="./vendor.BQAVRTmg.js">
+    <link rel="stylesheet" crossorigin href="./style.rqgRZxQD.css">
   <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
+    <!-- 立即应用主题，防止闪烁 -->
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('app-theme-mode') || 'dark';
+          document.documentElement.classList.add(theme);
+          if (theme === 'dark') {
+            document.body.style.backgroundColor = '#0f172a';
+          } else {
+            document.body.style.backgroundColor = '#ffffff';
+          }
+        } catch(e) {
+          document.documentElement.classList.add('dark');
+          document.body.style.backgroundColor = '#0f172a';
+        }
+      })();
+    </script>
     <div id="app"></div>
   </body>
 </html>
