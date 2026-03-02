@@ -1,1 +1,0 @@
-import{a as t}from"./vendor.COr2QKF1.js";function n(n,r=100){let l=null;const e=()=>{s(),l=setInterval(n,r)},s=()=>{l&&(clearInterval(l),l=null)};return t(s),{start:e,stop:s,restart:()=>{e()},isRunning:()=>null!=l}}export{n as u};
