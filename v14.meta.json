@@ -1,0 +1,17 @@
+{
+ "hand": 13,
+ "melds": 4,
+ "alpha": 0.85,
+ "scale": 65000,
+ "blockBits": 1024,
+ "totalValid": 176797280,
+ "states": 22865342,
+ "exceptions": 236717,
+ "files": {
+  "v14.bitmap.bin": "efed12420ca7ca02",
+  "v14.rank.bin": "88dbdae905e9734a",
+  "v14.values.bin": "1809676b057ef00e",
+  "v14.exckeys.bin": "f3509c6ce4994e85",
+  "v14.exccells.bin": "b4901ca4edf24950"
+ }
+}
